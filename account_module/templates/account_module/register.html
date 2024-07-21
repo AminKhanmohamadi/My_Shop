@@ -1,0 +1,74 @@
+{% load  static %}
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="{% static 'login_static/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'login_static/css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'login_static/css/bootstrap.min.css' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'login_static/css/style.css' %}">
+
+    <title>Register</title>
+</head>
+<body>
+
+
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'login_static/images/undraw_remotely_2j6y.svg' %}" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 contents">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="mb-4">
+                            <h3 style="text-align: center">ثبت نام کاربر</h3>
+                        </div>
+                        <form action="{% url 'account_module:register_page' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group {% if register_form.email %}first{% endif %} last  ">
+                                   {{ register_form.email.label_tag }}
+                                    {{ register_form.email }}
+                                    {{ register_form.email.errors }}
+
+                                   {{ register_form.password.label_tag }}
+                                    {{ register_form.password }}
+                                    {{ register_form.password.errors }}
+
+                                   {{ register_form.confirm_password.label_tag }}
+                                    {{ register_form.confirm_password }}
+                                    {{ register_form.confirm_password.errors }}
+                            </div>
+
+                            <button type="submit"  class="btn btn-block btn-primary">ثبت نام</button>
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="{% static 'login_static/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'login_static/js/popper.min.js' %}"></script>
+<script src="{% static 'login_static/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'login_static/js/main.js' %}"></script>
+
+</body>
+</html>

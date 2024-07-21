@@ -1,0 +1,536 @@
+{% extends 'shared/_layout.html' %}
+{% load static %}
+{% block title %}
+    فروشگاه دوربینک
+{% endblock %}
+
+{% block main %}
+    <main class="my-5">
+
+
+
+        <!--  ضمانت اصل کالا -->
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-12">
+
+                    <div class="banner__top__lg">
+
+                        <a href="#">
+                            <img src="{% static 'images/banners/slider1.jpg' %}" class="img-fluid" alt="">
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-10">
+
+                    <div class="slogan slogan__bg__glass w-100 d-none d-sm-block">
+
+                        <div class="row">
+
+                            <div class="col-6 col-lg-3 align-items-center d-flex">
+
+
+                                <div class="slogan__item mx-auto text-center py-3">
+                                    <img src="{% static 'images/icons/warranty(1).svg' %}" alt="">
+                                    <p class="my-3">
+                                        ضمانت اصالت کالا
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="col-6 col-lg-3 align-items-center d-flex">
+
+
+                                <div class="slogan__item mx-auto text-center py-3">
+                                    <img src="{% static 'images/icons/exchange.svg' %}" alt="">
+                                    <p class="my-3">
+                                        ضمانت برگشت کالا
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="col-6 col-lg-3 align-items-center d-flex">
+
+
+                                <div class="slogan__item mx-auto text-center py-3">
+                                    <img src="{% static 'images/icons/support1.svg' %}" alt="">
+                                    <p class="my-3">
+                                        پشتیبانی 24 ساعته
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="col-6 col-lg-3 align-items-center d-flex">
+
+
+                                <div class="slogan__item mx-auto text-center py-3">
+                                    <img src="{% static 'images/icons/deliver1.svg' %}" alt="">
+                                    <p class="my-3">
+                                        ارسال به سراسر کشور
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- پایان ضمانت اصل کالا -->
+
+        <!-- banner takhfif -->
+        <div class="container off__slider__top short__bg short__bg__lg position-relative pb-5">
+
+            <div class="off__slider__top__body p-4">
+
+                <div class="row g-5">
+
+                    <div class="col-12">
+
+                        <div class="position-relative">
+
+                            <div class="off__slider__top__title position-relative mx-auto text-center">
+
+                                <h3 class="fw-bold m-0">
+                                    با تخفیف بخر!!
+                                </h3>
+                                <span>
+                           Buy at a discount
+                        </span>
+
+                                <div class="off__slider__top__title__line mx-auto mt-2"></div>
+
+                            </div>
+
+                            <a href="shop.html"
+                               class="off__slider__top__link position-absolute bottom-0 end-0 fw-bold px-1 py-2">
+                                مشاهده همه
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end banner takhfif -->
+
+
+        <!-- product powerbank -->
+        <div class="container my-5">
+
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <a href="#" class="">
+                        <img src="{% static 'images/banners/headphone-banner.png' %}" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a href="#" class="d-block">
+                        <img src="{% static 'images/banners/powerbank-banner.png' %}" class="img-fluid" alt="">
+                    </a>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- end product powerbank -->
+
+
+
+        <!-- second banner powerbank -->
+        <div class="container my-5">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-4">
+
+                    <a href="#" class="d-block">
+                        <img src="/static/images/banners/mi-banner.png" class="img-fluid mx-auto d-block" alt="">
+                    </a>
+
+                </div>
+
+
+                <div class="col-lg-4">
+                    <a href="#" class="d-block">
+                        <img src="/static/images/banners/adata-banner.png" class="img-fluid mx-auto d-block" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-4">
+                    <a href="#" class="d-block">
+                        <img src="/static/images/banners/apple-banner.png" class="img-fluid mx-auto d-block" alt="">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end second banner powerbank -->
+
+        <!-- second category phone -->
+        <div class="container my-4 bg-gray-radius p-4">
+
+            <div class="row g-5">
+
+                <div class="col-12">
+                    <div class="row">
+
+                        <div class="col-6">
+
+
+                            <div class="position-relative introduction">
+
+                                <h2 class="introduction__title m-0">
+                                    انواع
+                                    <span class="fw-bold"> دوربین مداربسته</span>
+                                </h2>
+                                <span class="introduction__title__en">
+                           CCTV
+                        </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="col-6 align-items-end d-flex">
+
+                            <a href="{% url 'product_module:product-list' %}" class="see__all fw-bold px-1 py-2 ms-auto">
+                                مشاهده همه
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+        <!-- end second category phone -->
+
+        <!-- weblog banner -->
+        <div class="container my-4 bg-purple-radius pt-4 px-4">
+
+            <div class="row g-5">
+
+                <div class="col-12">
+                    <div class="row">
+
+                        <div class="col-6">
+
+
+                            <div class="position-relative introduction">
+
+                                <h2 class="introduction__title m-0 text-white">
+                                    مطالب
+                                    <span class="fw-bold text-white">
+                              وبلاگ
+                           </span>
+                                </h2>
+                                <span class="introduction__title__en">
+                           Weblog
+                        </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="col-6 align-items-end d-flex">
+
+                            <a href="{% url 'article_module:article_page' %}" class="see__all fw-bold p-2 ms-auto">
+                                مشاهده همه
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12">
+
+                    <div class="owl-carousel owl-theme owl-six-carousel section__main__similar">
+
+                        <div class="item pb-3 px-3 px-md-2">
+
+                            <div class="card position-relative">
+
+                                <div class="section__main__content__before position-absolute top-0 px-3"></div>
+
+                                <div class="card-body">
+
+
+                                    <div class="row g-2">
+
+
+                                        <div class="col-12">
+                                            <div class="card__img position-relative"
+                                                 style="background-image: url(/static/images/articles/article-md.svg);">
+
+                                                <div class="card__hover position-absolute w-100 h-100 d-flex align-items-center">
+
+                                                    <div class="row justify-content-center mx-auto">
+
+                                                        <div class="col-4">
+
+                                                            <a href="#" class="card__hover__link rounded-3 p-2 d-block">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20"
+                                                                     viewBox="0 0 16 20">
+                                                                    <path
+                                                                            d="M14.986,2H9.014C5.909,2,4,3.5,4,6.434v13.9a1.778,1.778,0,0,0,.193.786l.094.155.1.126a1.612,1.612,0,0,0,2,.406l5.59-3.14L17.586,21.8a1.705,1.705,0,0,0,.774.2,1.614,1.614,0,0,0,1.162-.489A1.691,1.691,0,0,0,20,20.331V6.258C20,3.435,18.048,2,14.986,2ZM9.014,3.448h5.971c2.364,0,3.6.91,3.6,2.81V20.331a.224.224,0,0,1-.063.157.213.213,0,0,1-.153.065.3.3,0,0,1-.126-.035l-5.6-3.128a1.374,1.374,0,0,0-1.337,0L5.72,20.527a.218.218,0,0,1-.27-.075l-.037-.062c.007.01.006,0,0-.024s0-.03,0-.047V6.434C5.412,4.4,6.619,3.448,9.014,3.448Zm7.1,5.593a.715.715,0,0,0-.706-.724H8.54l-.1.007a.725.725,0,0,0,.1,1.441h6.867l.1-.007A.718.718,0,0,0,16.114,9.04Z"
+                                                                            transform="translate(-4 -2)" fill="#7f7f7f" fill-rule="evenodd" />
+                                                                </svg>
+                                                            </a>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end weblog banner -->
+
+        <!-- pishnahad shegeft -->
+        <div class="container my-5 px-0 d-none d-lg-block">
+
+            <div class="row">
+
+                <div class="col-12 col-xl-3 d-none d-xl-block">
+
+                    <a href="#" class="d-block">
+                        <img src="{% static 'images/banners/Group%20180.png' %}" class="mx-auto d-block img-fluid" alt="">
+                    </a>
+
+                </div>
+
+
+                <div class="col-12 col-xl-9">
+
+                    <div class="pt-4 px-4 px-sm-3 special__offer">
+
+
+                        <div class="row">
+
+                            <div class="col-12">
+
+                                <div class="row">
+
+                                    <div class="col-10 ps-0">
+
+                                        <div id="special__offer__splide__contect2">
+
+                                            <div class="splide__track">
+
+                                                <ul class="splide__list">
+
+                                                    <li class="splide__slide">
+
+                                                        <div class="row">
+
+                                                            <div class="col-3 text-center  splide__slide__right__box">
+
+                                                                <div class="special__offer__title text-white fw-bold mb-4 p-2">
+                                                                    پیشنهاد شگفت انگیز
+                                                                </div>
+
+                                                                <a href="#" class="d-block card-img-top-bg text-center">
+
+                                                                    <img src="{% static 'images/off-slider/mobile.svg' %}" class="card-img-top mx-auto"
+                                                                         alt="">
+
+                                                                    <div class="card-timer py-1 px-3 mx-auto mt-3 mb-2">
+                                                                        2:11:8:41
+                                                                    </div>
+
+                                                                    <span class="header__cart__price__unit fw-bold ms-2">
+                                                      زمان باقی مانده تا اتمام تخفیف
+                                                   </span>
+
+                                                                </a>
+
+                                                            </div>
+
+
+                                                            <div class="col-9">
+
+                                                                <div class="row">
+
+                                                                    <div class="col-12">
+
+                                                                        <a href="#"
+                                                                           class="special__offer__splide__contect__title fw-bold d-block float-start">
+                                                                            گوشی موبایل سامسونگ مدل s20
+                                                                        </a>
+
+                                                                        <span class="header__cart__price__off text-white px-3 ms-2">
+                                                                             10% تخفیف
+                                                                        </span>
+
+                                                                    </div>
+
+
+                                                                    <div class="col-12">
+                                                                        <p class="special__offer__splide__contect__title-en my-2">
+                                                                            Samsung Galaxy S20 FE
+                                                                        </p>
+                                                                    </div>
+
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-2">
+
+                                        <div id="special__offer__splide__list2">
+
+                                            <div class="splide__track px-4">
+
+                                                <ul class="splide__list">
+
+                                                    <li class="splide__slide mb-2">
+
+                                                        <div class="special__offer__list">
+                                                            <div class="py-2 px-3 special__offer__list__img bg-white">
+                                                                <img src="{% static 'images/icons/mobile-sm.svg' %}" class="mx-auto d-flex" alt=""
+                                                                     srcset="">
+                                                            </div>
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li class="splide__slide mb-2">
+
+                                                        <div class="special__offer__list">
+                                                            <div class="py-2 px-3 special__offer__list__img bg-white">
+                                                                <img src="{% static 'images/icons/mobile-sm.svg' %}" class="mx-auto d-flex" alt=""
+                                                                     srcset="">
+                                                            </div>
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li class="splide__slide mb-2">
+
+                                                        <div class="special__offer__list">
+                                                            <div class="py-2 px-3 special__offer__list__img bg-white">
+                                                                <img src="{% static 'images/icons/mobile-sm.svg' %}" class="mx-auto d-flex" alt=""
+                                                                     srcset="">
+                                                            </div>
+                                                        </div>
+
+                                                    </li>
+
+                                                    <li class="splide__slide mb-2">
+
+                                                        <div class="special__offer__list">
+                                                            <div class="py-2 px-3 special__offer__list__img bg-white">
+                                                                <img src="{% static 'images/icons/mobile-sm.svg' %}" class="mx-auto d-flex" alt=""
+                                                                     srcset="">
+                                                            </div>
+                                                        </div>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end  pishnahad shegeft -->
+
+    </main>
+{% endblock %}

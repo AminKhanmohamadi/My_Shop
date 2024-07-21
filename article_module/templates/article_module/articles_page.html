@@ -1,0 +1,214 @@
+{% extends 'shared/_layout.html' %}
+{% load polls_extras %}
+{% load static %}
+{% load render_partial %}
+
+{% block title %}
+    مقالات
+{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="container   px-4 px-sm-2" style="margin-top: 7rem !important;" >
+            <div class="row">
+                <div class="col-12 col-lg-3 pe-0 ps-0 pe-lg-3 bg-light text-dark">
+
+                    <aside class="px-3 px-sm-0">
+
+
+
+                        {% render_partial 'article_module.views.article_categories_component' %}
+
+                        <div class="aside position-relative aside__last__posts pb-3 mb-5">
+
+                            <div class="section__main__content__before position-absolute top-0 px-3"></div>
+
+                            <div class="row">
+
+                                <div class="col-12">
+
+                                    <h4 class="aside__title fw-bold px-2 pb-3 pt-4">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17.251" height="18.9" viewBox="0 0 17.251 18.9">
+                                            <defs>
+                                                <style>
+                                                    .cls-1,
+                                                    .cls-2 {
+                                                        fill: none;
+                                                        stroke: #dfdfdf;
+                                                        stroke-linecap: round;
+                                                        stroke-linejoin: round;
+                                                        stroke-width: 1.5px;
+                                                    }
+
+                                                    .cls-2 {
+                                                        fill-rule: evenodd;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <g id="Document" transform="translate(0.75 0.75)">
+                                                <path id="Path_192" data-name="Path 192" class="cls-1" d="M15.32,16.223H8.5" transform="translate(-4.011 -3.489)"></path>
+                                                <path id="Path_193" data-name="Path 193" class="cls-1" d="M15.32,12.037H8.5" transform="translate(-4.011 -3.259)"></path>
+                                                <path id="Path_194" data-name="Path 194" class="cls-1" d="M11.1,7.86H8.5" transform="translate(-4.011 -3.03)"></path>
+                                                <path id="Path_195" data-name="Path 195" class="cls-2" d="M15.242,2.75l-7.267,0A4.017,4.017,0,0,0,3.751,7.1V15.8A4.021,4.021,0,0,0,8.009,20.15l7.267,0A4.019,4.019,0,0,0,19.5,15.8V7.1A4.022,4.022,0,0,0,15.242,2.75Z" transform="translate(-3.751 -2.75)"></path>
+                                            </g>
+                                        </svg>
+
+                                        آخرین مطالب
+                                    </h4>
+
+                                </div>
+
+                                <div class="col-12">
+
+
+                                    <div class="px-3">
+
+                                        {% for article in object_list|slice:":2" %}
+                                            <div class="aside__last__post py-3">
+                                                <div class="row">
+                                                    <a href="#" class="d-inline-flex">
+
+                                                        <div class="col-lg-3 col-xl-2">
+
+
+                                                            <div class="aside__last__post__img" style="background-image: url({{ article.image.url }});"></div>
+
+
+                                                        </div>
+
+                                                        <div class="col-lg-9 col-xl-10">
+
+                                                            <h4 class="aside__last__post__title ms-3">
+                                                                {{ article.title }}
+                                                            </h4>
+
+                                                        </div>
+
+                                                    </a>
+                                                </div>
+
+
+                                            </div>
+                                        {% endfor %}
+
+
+
+
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+
+                </div>
+
+                <div class="col-12 col-lg-9 pe-0 ps-0 ps-lg-3" >
+                    <section class="section__main__similar px-3 px-sm-0 mb-4">
+                        <div class="row">
+
+                            <div class="col-6 col-md-3 col-xxl-2 align-items-center d-flex pe-md-0">
+
+                                <div class="section__main__similar__title align-content-center d-flex">
+
+                                    <img src="{% static 'images/blog/badge-new.svg' %}" class=" float-start me-2" alt="" srcset="">
+
+                                    <h3 class="section__main__similar__title__text float-start mb-0">
+                              <span class="fw-bolder">
+                                 آخرین
+                              </span>
+                                        اخبار
+                                    </h3>
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-6 col-md-7 col-xxl-9 ps-0 d-none d-md-block">
+                                <hr class="section__main__content__line">
+                            </div>
+
+                            <div class="col-6 col-md-2 col-xxl-1 ps-md-0 align-items-center d-flex ">
+                                <a href="#" class="ms-auto fw-bold blog__last__content__all">
+                                    مشاهده همه
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="row g-2 my-2">
+                            {% for article in object_list %}
+                                <div class="col-12 col-sm-6">
+                                    <div class="card mb-3 blog__last__news h-100">
+                                        <div class="card-body d-flex flex-column">
+                                            <div class="row g-3 flex-grow-1">
+                                                <div class="col-4 col-sm-12 col-md-4">
+                                                    <div class="blog__card__news" style="background-image: url({{ article.image.url }});"></div>
+                                                </div>
+                                                <div class="col-8 col-sm-12 col-md-8 align-items-center d-flex flex-column">
+                                                    <div class="row flex-grow-1">
+                                                        <div class="col-12">
+                                                            <a href="{% url 'article_module:article_detail_page' pk=article.id %}" class="card-title fw-bold d-block m-0 pb-2 border-bottom" style="font-size: 13px; color: #7F7F7F;">
+                                                                {{ article.title }}
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <p class="aside__comment__text my-2">
+                                                                {{ article.short_description }}
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-6 d-inline-flex w-100 ">
+                                                            {% for category in article.selected_categories.all %}
+                                                                    <a href="{% url 'article_module:article_detail_page' pk=article.id %}" class="card-category me-2  ">
+                                                                        <img src="{% static 'images/icons/Category.svg' %}" class="w-auto me-1" alt="">
+                                                                            {{ category.title }}
+                                                                    </a>
+                                                            {% endfor %}
+                                                            {% if article.updated_at %}
+                                                                <a href="#" class="card-date ">
+                                                                    <img src="{% static 'images/blog/Calendar.svg' %}" class="w-auto  me-1" alt="">
+                                                                    {{ article.updated_at|show_date }}
+                                                                </a>
+                                                            {% else %}
+                                                                <a href="#" class="card-date ">
+                                                                    <img src="{% static 'images/blog/Calendar.svg' %}" class="w-auto  me-1" alt="">
+                                                                    {{ article.created_at|show_date }}
+                                                                </a>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="col-6 align-items-center d-flex">
+                                                            <div class="last__news__link ms-auto">
+                                                                <a href="{% url 'article_module:article_detail_page' pk=article.id %}" class="d-inline-block fw-bold">
+                                                                    <span>ادامه مطلب</span>
+                                                                </a>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="10.811" height="12.121" viewBox="0 0 8.811 16.121">
+                                                                    <path id="Arrow_-_Down_2" data-name="Arrow - Down 2" d="M14,7,7,0,0,7" transform="translate(0.75 15.061) rotate(-90)" fill="none" stroke="#7f7f7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </section>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

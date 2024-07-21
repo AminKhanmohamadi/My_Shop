@@ -1,0 +1,196 @@
+{% load static  %}
+   <footer class="mb-4  mb-sm-0">
+
+      <div class="container-fluid px-0 footer__bg">
+
+         <div class="container">
+
+
+            <div class="footer position-relative pt-4">
+
+               <div class="footer__before w-100 position-absolute top-0"></div>
+
+               <div class="footer__logo position-absolute align-items-center d-grid">
+
+                  <div class="row">
+
+                     <div class="col-12 ps-0 text-center">
+
+                        <img src="{{ site_setting.site_logo.url }}" alt="" style="width: auto; height: 70px;">
+
+                     </div>
+
+                     <div class="col-12 ps-0">
+
+                        <p class="header__top__logo__text">مرکز تخصصی  دوربین مداربسته </p>
+
+                     </div>
+
+                  </div>
+
+               </div>
+
+
+               <div class="row">
+
+                  <div class="col-6 d-none d-lg-block">
+
+                     <nav class="nav row-cols-auto">
+                        <a class="nav-link footer__nav__link fw-bold col px-xl-4" href="{% url 'home_module:home' %}">
+                           صفحه اصلی
+                        </a>
+                        <a class="nav-link footer__nav__link fw-bold col px-xl-4" href="{% url 'product_module:product-list' %}">
+                           فروشگاه
+                        </a>
+                       
+                        <a class="nav-link footer__nav__link fw-bold col px-xl-4" href="{% url 'contact_module:contact_us_page' %}">
+                           تماس با ما
+                        </a>
+                     </nav>
+
+                  </div>
+
+               </div>
+
+
+               <div class="row g-2 my-5">
+
+                  <div class="col-md-12 col-lg-5 col-xl-6">
+
+                     <div class="row">
+
+                        <div class="col-12 col-lg-1">
+
+                           <h4 class="footer__title">
+                              درباره ی <span>دوربینک</span>
+                           </h4>
+
+                        </div>
+
+                        <div class="col-12 col-lg-11 ps-lg-0">
+                           <p class="footer__text">
+                             {{ site_setting.about_us_text }}
+                           </p>
+                        </div>
+
+                     </div>
+
+                  </div>
+
+                  <div class="col-12 col-md-4 col-lg-2">
+
+                     <nav class="nav flex-md-column row-cols-auto footer__socials px-lg-4">
+                        <a class="nav-link footer__social col mb-2 mx-1 mx-md-0" href="#">
+                           <img src="{% static 'images/icons/instagram-sm.svg' %}" class="me-2" alt="" srcset="">
+                           اینستاگرام
+                        </a>
+                        <a class="nav-link footer__social col mb-2 mx-1 mx-md-0" href="https://www.linkedin.com/in/amin-khanmohammadi-60790a2b5/">
+                           <img src="{% static 'images/icons/linkedin-sm.svg' %}" class="me-2" alt="">
+                           لینکدین
+                        </a>
+                        <a class="nav-link footer__social col mb-2 mx-1 mx-md-0" href="#">
+                           <img src="{% static 'images/icons/twitter-sm.svg' %}" class="me-2" alt="">
+                           توییتر
+                        </a>
+{#                        <a class="nav-link footer__social col mb-2 mx-1 mx-md-0" href="#">#}
+{#                           <img src="/static/images/icons/youtube-sm.svg" class="me-2" alt="">#}
+{#                           یوتیوب#}
+{#                        </a>#}
+                     </nav>
+
+                  </div>
+
+                  <div class="col-12 col-md-8 col-lg-5 col-xl-4 mt-4 mt-md-0">
+
+                     <div class="row g-3 justify-content-center justify-content-md-end">
+
+                        <div class="col-4 px-0">
+
+                           <div class="footer__enamad mx-auto ms-sm-auto">
+                              <a href="#" class="d-block text-center">
+                                 <img src="{% static 'images/enamad/enemad2.png' %}" class="footer__enamad mx-auto ms-sm-auto" alt="">
+                              </a>
+                           </div>
+
+                        </div>
+
+
+                        <div class="col-4 px-0">
+
+                           <div class="footer__enamad mx-auto ms-sm-auto">
+                              <a href="#" class="d-block text-center">
+                                 <img src="{% static 'images/enamad/enemad2.png' %}" class="footer__enamad mx-auto ms-sm-auto" alt="">
+                              </a>
+                           </div>
+
+                        </div>
+
+
+                        <div class="col-4 px-0">
+
+
+                           <div class="footer__enamad mx-auto ms-sm-auto">
+                              <a href="#" class="d-block text-center">
+                                 <img src="{% static 'images/enamad/enemad.png' %}" class="footer__enamad mx-auto ms-sm-auto" alt="">
+                              </a>
+                           </div>
+
+
+                        </div>
+
+                     </div>
+
+                  </div>
+
+               </div>
+
+
+               <div class="footer__info px-3 py-2">
+
+                  <div class="row g-2">
+
+                     <div class="col-12 col-lg-3 col-xl-2 align-items-center d-flex">
+                        <h6 class="fw-bold text-white mb-0">
+                           مسیر های ارتباطی :
+                        </h6>
+                     </div>
+
+
+                     <div class="col-12 col-lg-9 col-xl-10">
+
+                        <nav class="nav float-end row-cols-auto">
+                           <a class="nav-link footer__nav__link col px-4" href="contact.html">
+                              <img src="{% static 'images/icons/Message.svg' %}" class="me-2" alt="">
+                              {{ site_setting.email }}
+                           </a>
+                           <a class="nav-link footer__nav__link col px-4" href="contact.html">
+                              <img src="{% static 'images/icons/footer-calling.svg' %}" class="me-2" alt="">
+                              {{ site_setting.phone }}
+                           </a>
+                           <a class="nav-link footer__nav__link col px-4" href="contact.html">
+                              <img src="{% static 'images/icons/Location.svg' %}" class="me-2" alt="">
+                              {{ site_setting.address }}
+                           </a>
+                        </nav>
+
+                     </div>
+
+
+                  </div>
+
+               </div>
+
+
+               <p class="footer_copy__right m-0 py-3">
+                    {{ site_setting.copy_right }}
+               </p>
+
+
+            </div>
+
+
+         </div>
+
+      </div>
+
+   </footer>

@@ -1,0 +1,75 @@
+<aside class="px-3 px-sm-0">
+    <div class="aside position-relative pb-3 mb-5">
+        <div class="section__main__content__before position-absolute top-0 px-3"></div>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <h4 class="aside__title fw-bold px-2 pb-3 pt-4">
+                    دسته بندی ها :
+                </h4>
+
+            </div>
+
+            {% for main_category in category_list %}
+                <div class="col-12">
+
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+
+                                {% if main_category.children.all %}
+                                    <button class="accordion-button collapsed"  type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        {{ main_category.title }}
+                                    </button>
+                                {% else %}
+                                    <a class="accordion-button " type="button" href="{% url 'product_module:product-category' category=main_category.url_title %}">
+                                        {{ main_category.title }}
+                                    </a>
+                                {% endif %}
+
+                            </h2>
+
+
+                            {% if main_category.children.all %}
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+
+                                    <div class="accordion-body">
+
+                                        <div class="col-12 px-2">
+
+                                            {% for sub_category in main_category.children.all %}
+                                                <div class="form-check">
+                                                    <a  href="{% url 'product_module:product-category' category=sub_category.url_title %}" id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            {{ sub_category.title }}
+                                                        </label>
+                                                    </a>
+                                                </div>
+                                            {% endfor %}
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            {% endif %}
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+
+</aside>

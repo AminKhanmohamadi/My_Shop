@@ -1,0 +1,96 @@
+{% load humanize %}
+<div class="col-6 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-0">
+
+    <div class="card position-relative product__card rounded-0">
+
+        <div class="p-3 mb-2 position-relative">
+
+            <a href="{% url 'product_module:product-detail' slug=product.slug %}" class="d-block text-center">
+                <img src="{{ product.image_product.url }}" class="card-img mx-auto" alt="...">
+            </a>
+
+            <nav class="nav flex-column position-absolute start-0 top-0 p-3 card__options card__options__ungaps">
+                <a class="nav-link p-0 mb-1 card__options__colors" style="background-color: #CBCBCB;"></a>
+                <a class="nav-link p-0 mb-1 card__options__colors" style="background-color: #AA9393;"></a>
+                <a class="nav-link p-0 mb-1 card__options__colors" style="background-color: #7A7A7A;"></a>
+            </nav>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-12">
+
+                    <div class="row g-2">
+
+                        <div class="col-12 text-center">
+                            <a href="{% url 'product_module:product-detail' slug=product.slug %}" class="card-title fw-bold">
+                                {{ product.title }}
+                            </a>
+                        </div>
+
+                        <div class="col-12 text-center">
+                              <span class="card-title fw-bold">
+                                  امتیاز 6
+                              </span>
+                            <img src="/static/images/icons/rate.svg" alt="">
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="row">
+{#                                <div class="col-12">#}
+{#                                    <div class="d-inline-block align-items-center d-flex">#}
+{#                                        <p class="header__cart__price float-start text-decoration-line-through mb-0">#}
+{#                                            13,750,000#}
+{#                                        </p>#}
+{#                                        <span class="header__cart__price__unit ms-1">#}
+{#                                            تومان#}
+{#                                        </span>#}
+{#                                        <span class="header__cart__price__off text-white px-2 ms-1">#}
+{#                                            %10#}
+{#                                        </span>#}
+{#                                    </div>#}
+{#                                </div>#}
+                                <div class="col-12">
+                                    <div class="d-inline-block align-items-center d-flex">
+                                        <p class="header__cart__price cart__off__price float-start mb-0">
+                                            {{ product.price | intcomma:False }}
+                                        </p>
+                                        <span class="header__cart__price__unit cart__off__price__unit fw-bold ms-1">
+                                            تومان
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 align-items-center d-flex">
+
+                            <div class="product__buy ms-auto" style="cursor: pointer;">
+
+                                <a href="{% url 'product_module:product-detail' slug=product.slug %}" class="product__buy__link text-white p-2 align-items-center d-flex">
+
+                                    <img src="/static/images/icons/buy-light.svg" alt="">
+
+                                    <span class="ms-1">
+                                        خرید محصول
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

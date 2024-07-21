@@ -1,0 +1,58 @@
+{% load  static %}
+{% load  render_partial %}
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+
+<!-- Mirrored from parsgameplay.ir/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 06:41:56 GMT -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="{% static 'fonts/woff/iranyekanwebmediumfanum.woff' %}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{% static 'fonts/woff/iranyekanwebregularfanum.woff' %}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{% static 'fonts/woff/iranyekanwebboldfanum.woff' %}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{% static 'fonts/woff/iranyekanweblightfanum.woff' %}" as="font" type="font/woff2" crossorigin="anonymous">
+
+
+   {% include 'shared/header_references.html' %}
+
+    {% block style %}
+
+    {% endblock %}
+
+    <!-- WebSite Title -->
+    <title> {% block title %}{% endblock %}</title>
+</head>
+
+
+<body>
+
+{% render_partial 'home_module.views.SiteHeaderComponent' %}
+
+{% block main %}
+
+{% endblock %}
+
+<!-- footer -->
+{% render_partial 'home_module.views.SiteFooterComponent' %}
+
+
+<!-- login modal -->
+
+
+
+
+<!-- register modal   -->
+
+
+
+<!-- Custom Js -->
+{% include 'shared/footer_references.html' %}
+
+{% block script %}
+
+{% endblock %}
+</body>
+
+</html>

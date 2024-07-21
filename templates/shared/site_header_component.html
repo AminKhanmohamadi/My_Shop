@@ -1,0 +1,175 @@
+{% load  static %}
+{% load render_partial %}
+<header>
+    <!-- start logo -->
+    <div class="container-fluid px-0 d-none d-lg-block">
+
+        <div class="header__top__shape w-100 position-absolute top-0"></div>
+
+        <div class="container px-0 d-none d-xl-block">
+            <div class="header__top__logo text-center align-items-center d-grid position-absolute top-0">
+                <a class="" href="{% url 'home_module:home' %}">
+                    <img src="{{ site_setting.site_logo.url }}" alt="" srcset="" style="width: 180px; height: 120px ; backdrop-filter: blur(10px);">
+                    <p class="header__top__logo__text">مرکز تخصصی دوربین مداربسته </p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <!-- end logo -->
+
+    <!-- start header search -->
+    <div class="container header">
+        <div class="header__before__nav position-relative d-none d-lg-block">
+            <div class="row justify-content-between">
+
+
+                {% render_partial 'home_module.views.product_categories_component' %}
+
+
+                <div class="col-4 col-xl-4 pt-4 pb-3 pb-lg-0">
+
+                    <div class="header__ac__links float-end">
+
+
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+
+                                <a  href="/admin" role="button" class="header__ac__links__btn me-2 ms-4 " target="_blank">
+                                    <img src="{% static 'images/icons/user-gear.png' %}" alt="پنل ادمین" title="پنل ادمین" srcset="" class="mx-auto w-50 ">
+                                </a>
+                            {% endif %}
+                            <a  href="#" role="button" class="header__ac__links__btn me-2 ms-4">
+                                <img src="{% static 'images/icons/Profile.svg' %}" alt="پروفایل کاربر" title="پروفایل کاربر" srcset="" class="mx-auto">
+
+                            </a>
+                            <a  href="{% url 'account_module:logout_page' %}" role="button" class="header__ac__links__btn">
+                                <img src="{% static 'images/icons/logout.png' %}" alt="خروج کاربر" title="خروج کاربر" srcset="" class="mx-auto w-50 ">
+                            </a>
+
+                        {% else %}
+                            <a  href="{% url 'account_module:login_page' %}" role="button" class="header__ac__links__btn me-2 ms-4" target="_blank">
+                                <img src="{% static 'images/icons/login.png' %}" alt="ورود کاربر"  title="ورود کاربر" srcset="" class="mx-auto w-50">
+                            </a>
+                            <a  href="{% url 'account_module:register_page' %}" role="button" class="header__ac__links__btn" target="_blank">
+                                <img src="{% static 'images/icons/register.png' %}" alt="ثبت نام کاربر"  title="ثبت نام کاربر" srcset="" class="mx-auto w-50">
+
+                            </a>
+
+                        {% endif %}
+
+
+
+
+                    </div>
+
+                    <div class="header__cart position-relative align-items-center d-flex float-end" >
+
+                        <div class="header__cart__count float-start position-absolute d-none d-lg-block">
+                            <span>32</span>
+                        </div>
+
+                        <div class="dropdown d-none d-lg-block">
+
+                            <a class="btn btn-sm text-white dropdown-toggle" href="cart.html" role="button"
+                               id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                سبد خرید
+                            </a>
+
+                            <ul class="dropdown-menu px-3" aria-labelledby="dropdownMenuLink">
+
+                                <li class="py-2 header__cart__list">
+                                    <div class="row">
+
+
+                                        <div class="col-3">
+                                            <a href="#" class="header__cart__img d-block py-2 px-3">
+                                                <img src="{% static 'images/icons/mobile-sm.svg' %}" alt="" srcset="">
+                                            </a>
+                                        </div>
+
+
+                                        <div class="col-7 align-items-center d-flex px-0 py-1">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <a href="product.html" class="header__cart__title fw-bold">
+                                                        گوشی موبایل سامسونگ مدل s20
+                                                    </a>
+                                                </div>
+                                                <div class="col-5 pe-0 align-items-center d-flex">
+                                          <span class="header__cart__number pe-2">
+                                             1 عدد
+                                          </span>
+                                                    <span class="header__cart__color ms-3"></span>
+                                                </div>
+                                                <div class="col-7 pe-0 ps-1 align-items-center d-flex">
+                                                    <div class="d-inline-block align-items-center d-flex">
+
+                                                        <p class="header__cart__price float-start mb-0">
+                                                            15,750,000
+                                                        </p>
+                                                        <span class="header__cart__price__unit ms-1">
+                                                تومان
+                                             </span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-2 align-items-center d-flex">
+                                            <a href="#" class="mx-auto">
+                                                <img src="{% static 'images/icons/Delete.svg' %}" alt="" srcset="">
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+                                <li class="py-2 mt-3 header__cart__list__total">
+                                    <div class="row">
+
+
+                                        <div class="col-6 align-items-center d-flex">
+                                            <p class="header__cart__list__total__title mb-0 ps-4">
+                                                جمع کل :
+                                            </p>
+                                        </div>
+                                        <div class="col-6 align-items-center d-flex">
+                                            <div class="header__cart__list__total__price ms-auto pe-4">
+                                                12,782,000
+                                                <span>
+                                          تومان
+                                       </span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </li>
+
+                                <li class="py-2 mt-3 header__cart__list__pay">
+                                    <div class="row">
+
+                                        <div class="col-12">
+                                            <a href="checkout.html"
+                                               class="header__cart__list__pay__link text-white float-end p-2">
+                                                تسویه حساب
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end header search -->
+</header>

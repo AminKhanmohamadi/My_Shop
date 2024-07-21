@@ -1,0 +1,72 @@
+{% extends 'shared/_layout.html' %}
+{% load render_partial %}
+
+{% block title %}
+    لیست محصولات
+{% endblock %}
+
+{% block main %}
+
+    <main>
+        <div class="container my-4 py-3 header__breadcrumb" style="margin-top: 7rem !important; ">
+
+            <div class="row">
+
+                <div class="col-12 col-lg-3 ps-0 pe-0 pe-lg-3 bg-light text-dark d-none d-lg-block">
+
+                    {% render_partial  'product_module.views.product_category' %}
+
+
+                </div>
+
+
+                <div class="col-12 col-lg-9 ps-lg-3">
+
+                    <div class="row my-4 px-2">
+
+                        {% for product in products %}
+                            {% include 'include/product_item_partial.html' with product=product %}
+                        {% endfor %}
+
+
+                    </div>
+
+                    <div class="row my-5">
+
+                        <div class="col justify-content-center d-flex">
+
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination mb-0">
+                                    {% if page_obj.has_previous %}
+                                        <li class="page-item">
+                                            <a class="page-link px-3 mx-2" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                                <img src="/static/images/icons/arrow-right.svg" alt="">
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                    {% for page_number in paginator.page_range %}
+                                        <li class="page-item {% if page_obj.number == page_number %} active {% endif %}"><a class="page-link fw-bold px-3 mx-1" href="?page={{ page_number }}">{{ page_number }}</a>
+                                    {% endfor %}
+                                    {% if page_obj.has_next %}
+                                        <li class="page-item">
+                                            <a class="page-link px-3 mx-2" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                                <img src="/static/images/icons/arrow-left.svg" alt="">
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+{% endblock %}
+

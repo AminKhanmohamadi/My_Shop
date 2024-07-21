@@ -1,0 +1,49 @@
+{% load  static %}
+<div class="col-8 col-xl-7 pt-4 pb-3 pb-lg-0">
+
+                    <div class="header__space__logo">
+
+                        <div class="header__search float-start position-relative">
+
+                            <form class="d-flex position-relative header__search__form">
+
+                                <input class=" me-2 ps-2 header__search__input" type="search"
+                                       placeholder="دنبال چیزی میگردی ؟" aria-label="Search">
+
+                                <div class="dropdown align-items-center d-flex float-end ps-3 header__search__dropdown">
+
+                                    <a class="btn dropstart dropdown-toggle p-0 header__search__dropdown__btn" href="#"
+                                       role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        جست و جو در ...
+                                    </a>
+
+                                    <ul class="dropdown-menu header__search__dropdown__menu"
+                                        aria-labelledby="dropdownMenuLink">
+
+                                        {% for category in product_categories %}
+                                            <li>
+                                                <a class="dropdown-item py-3" href="{% url 'product_module:product-list'   %}">
+                                                    {{ category.title }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+
+
+                                    </ul>
+
+
+                                </div>
+
+
+
+
+                                <button class="btn position-absolute end-0 h-100 header__search__btn" type="submit">
+                                    <img src="{% static 'images/icons/Search.svg' %}" alt="" srcset="" class="d-block">
+                                </button>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
